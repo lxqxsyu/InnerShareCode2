@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    tools:context=".activity.SharePreferenceTestActivity">
+    
+    <EditText
+        android:id="@+id/et_inputtext"
+        android:hint="请输入要存储的文本"
+        style="@style/EditStyle"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <Button
+            android:text="存储"
+            android:onClick="saveClick"
+            style="@style/ButtonStyle"/>
+
+        <Button
+            android:layout_marginLeft="20dip"
+            android:text="显示"
+            android:onClick="showClick"
+            style="@style/ButtonStyle"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_showtext"
+        android:layout_marginTop="40dip"
+        tools:text="测试显示文本"
+        style="@style/TextStyle"/>
+</LinearLayout>

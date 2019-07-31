@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.IntentBundleTestAcivity">
+
+    <Button
+        style="@style/ButtonStyle"
+        android:text="传递普通数据"
+        android:layout_width="match_parent"
+        android:onClick="nomalDataClick"/>
+
+    <Button
+        style="@style/ButtonStyle"
+        android:text="实现Serializable接口传递"
+        android:layout_width="match_parent"
+        android:onClick="serializableClick"/>
+
+    <Button
+        style="@style/ButtonStyle"
+        android:text="实现Parcelable接口传递"
+        android:layout_width="match_parent"
+        android:onClick="parcelableClick"/>
+</LinearLayout>

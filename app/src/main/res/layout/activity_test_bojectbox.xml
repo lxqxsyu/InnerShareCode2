@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    tools:context=".activity.ObjectBoxTestActivity">
+
+    <EditText
+        android:id="@+id/et_input_title"
+        android:hint="请输入title"
+        style="@style/EditStyle"/>
+
+    <EditText
+        android:id="@+id/et_input_subtitle"
+        android:hint="请输入subtitle"
+        style="@style/EditStyle"/>
+
+    <Button
+        android:text="存储"
+        android:onClick="saveClick"
+        style="@style/ButtonStyle"/>
+
+    <EditText
+        android:id="@+id/et_input_searchkey"
+        android:hint="请输入查询条件（title)"
+        style="@style/EditStyle"/>
+
+    <Button
+        android:text="查询"
+        android:onClick="searchClick"
+        style="@style/ButtonStyle"/>
+
+    <TextView
+        android:id="@+id/tv_showtitle"
+        android:layout_marginTop="40dip"
+        tools:text="测试显示文本"
+        style="@style/TextStyle"/>
+
+    <TextView
+        android:id="@+id/tv_showsubtitle"
+        android:layout_marginTop="10dip"
+        tools:text="测试显示文本"
+        style="@style/TextStyle"/>
+</LinearLayout>
