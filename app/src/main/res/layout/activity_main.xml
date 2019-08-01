@@ -50,6 +50,13 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="60dip"
+            android:text="测试 FileProvider"
+            android:textAllCaps="false"
+            android:onClick="testFileProvider"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="60dip"
             android:text="测试列表适配器"
             android:textAllCaps="false"
             android:onClick="testListAdapter"/>

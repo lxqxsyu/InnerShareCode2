@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.dlc.helloword">
 
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -35,12 +39,26 @@
         <activity android:name=".activity.TestTurnActivity"
             android:screenOrientation="portrait"
             android:label="跳转过来啦！"/>
+        <activity android:name=".activity.FileProviderTestActivity"
+            android:screenOrientation="portrait"
+            android:label="测试FileProvider"/>
         <activity android:name=".activity.GrideAdapterTestActivity"
             android:screenOrientation="portrait"
             android:label="数据绑定"/>
         <activity android:name=".activity.ListAdapterTestActivity"
             android:screenOrientation="portrait"
             android:label="列表适配器"/>
+
+
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.dlc.helloword.fileprovider"
+            android:grantUriPermissions="true"
+            android:exported="false">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
     </application>
 
 </manifest>

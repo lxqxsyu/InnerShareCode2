@@ -41,4 +41,8 @@ public class MainActivity extends BaseActivity {
     public void testGridAdapter(View view) {
         turnToPage(GrideAdapterTestActivity.class);
     }
+
+    public void testFileProvider(View view) {
+        turnToPage(FileProviderTestActivity.class);
+    }
 }
