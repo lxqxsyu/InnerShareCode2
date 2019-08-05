@@ -1,5 +1,8 @@
 package com.dlc.helloword.activity;
 
+import android.content.Context;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -71,14 +74,21 @@ public class HttpsURLConnectionTestActivity extends BaseActivity {
         public RequestPostTask() {
             currentPage = mCurrentPage;
         }
-
+        private boolean mCancel = false;
         @Override
         protected void onPreExecute() {
-            //TODO 检查网络连接状态
+            ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+            NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
+            if(networkInfo == null || !networkInfo.isConnected() ||
+                    (networkInfo.getType() != ConnectivityManager.TYPE_WIFI
+                            && networkInfo.getType() != ConnectivityManager.TYPE_MOBILE)){
+                mCancel = true;
+            }
         }
 
         @Override
         protected List<AdviceImageBean> doInBackground(RequestParam... strings) {
+            if(mCancel) return null;
             try {
                 String result = getRemoteDataByURL(strings[0].getURL());
                 Log.d("TEST", "result = " + result);
@@ -96,6 +106,10 @@ public class HttpsURLConnectionTestActivity extends BaseActivity {
 
         @Override
         protected void onPostExecute(List<AdviceImageBean> adviceImageBeans) {
+            if(adviceImageBeans == null){
+                mAdapter.loadMoreEnd();
+                return;
+            }
             if(currentPage == 1) {
                 mAdapter.setNewData(adviceImageBeans);
             }else{

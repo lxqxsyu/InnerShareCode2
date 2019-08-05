@@ -12,6 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
+
         <Button
             android:layout_width="match_parent"
             android:layout_height="60dip"
@@ -74,6 +75,16 @@
             android:text="测试HttpsURLConnection"
             android:textAllCaps="false"
             android:onClick="testHttpsURLConnection"/>
+
+        <CheckedTextView
+            android:id="@+id/check_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginLeft="4dip"
+            android:checkMark="?android:attr/listChoiceIndicatorMultiple"
+            android:text="注册网络变化广播"
+            android:onClick="testNetworkChange"/>
     <Space
         android:layout_width="wrap_content"
         android:layout_height="0dip"
