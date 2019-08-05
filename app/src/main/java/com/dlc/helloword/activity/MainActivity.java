@@ -45,4 +45,8 @@ public class MainActivity extends BaseActivity {
     public void testFileProvider(View view) {
         turnToPage(FileProviderTestActivity.class);
     }
+
+    public void testHttpsURLConnection(View view) {
+        turnToPage(HttpsURLConnectionTestActivity.class);
+    }
 }

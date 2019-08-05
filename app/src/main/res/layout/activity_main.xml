@@ -67,6 +67,13 @@
             android:text="测试网格适配器"
             android:textAllCaps="false"
             android:onClick="testGridAdapter"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="60dip"
+            android:text="测试HttpsURLConnection"
+            android:textAllCaps="false"
+            android:onClick="testHttpsURLConnection"/>
     <Space
         android:layout_width="wrap_content"
         android:layout_height="0dip"
